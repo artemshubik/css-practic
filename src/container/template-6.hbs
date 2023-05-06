@@ -1,0 +1,95 @@
+{{!-- header --}}
+<header class="page_block">
+  <div class="header row">
+    <div class="col-3">
+      {{> logo}}
+    </div>
+    <nav class="header_nav col-9">
+      <div class="header_nav_right">
+        {{> nav list=header}}
+      </div>
+    </nav>
+  </div>
+</header>
+{{!-- end of header --}}
+
+<main class="main">
+  {{#with info}}
+  <div class="info">
+    <h1 class="info_title">{{title}}</h1>
+    <p class="info_description">{{description}}</p>
+  </div>
+  {{/with}}
+  {{!-- form --}}
+  {{#with form}}
+  <form class="form">
+    <div class="form_input_list">
+      {{#each inputs}}
+      <input type="{{type}}" placeholder="{{placeholder}}" class="form_input" name="{{name}}" id="form-input-{{id}}">
+      {{/each}}
+    </div>
+    <div class="form_checkbox">
+      <input type="checkbox" name="{{checkbox.name}}" id="{{checkbox.name}}">
+      <div></div>
+      <label for="{{checkbox.name}}">{{checkbox.label}}</label>
+    </div>
+    <button type="submit" class="form_button">{{button}}</button>
+    <div class="divider"></div>
+    <p class="form_info">{{info}}</p>
+  </form>
+  {{/with}}
+</main>
+{{!-- updates section --}}
+
+<div class="updates">
+  {{#with updates}}
+  <strong class="upd_title">{{title}}</strong>
+  <div class="user">
+    {{#each list}}
+    <div class="user_block">
+      <img src="https://picsum.photos/32" alt="User Image" class="user_image">
+      <div class="user_info">
+        <span class="user_nick">@{{nickname}}</span>
+        <p class="user_description">{{description}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{#with show_all}}
+  <a href="{{url}}" class="upd_link">{{text}}</a>
+  {{/with}}
+  {{/with}}
+</div>
+
+{{!-- expirience section --}}
+
+<div class="experience">
+  {{#with expirience}}
+  <h2 class="exp_title">{{title}}</h2>
+  <span class="exp_badge">{{badge}}</span>
+  <div class="exp_cards">
+    {{#each list}}
+    <div class="exp_card">
+      <strong class="exp_name">{{name}}</strong>
+      <p class="exp_detail">{{details}}</p>
+    </div>
+    {{/each}}
+  </div>
+  {{/with}}
+</div>
+
+{{!-- footer --}}
+<footer class="page_block">
+  <div class="row g-0 footer">
+    <div class="col-3">
+      {{> logo}}
+      <span class="footer_copyright">Copyright 2023-2024</span>
+    </div>
+    {{#each footer}}
+    <div class="col-3">
+      <div class="footer_title">{{title}}</div>
+      {{> nav list=links isVertical=true}}
+    </div>
+    {{/each}}
+  </div>
+</footer>
