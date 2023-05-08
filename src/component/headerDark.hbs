@@ -1,0 +1,21 @@
+<header class="header_wrapper">
+  {{#with header}}
+  <div class="header_top">
+    <a href="/" class="logo">{{brandName}}</a>
+    <div class="links_wrapper">
+      {{#each links}}
+      <a href="{{url}}" class="link_item">{{text}}</a>
+      {{/each}}
+    </div>
+  </div>
+  <div class="header_bottom">
+    <div class="ad_wrapper">
+      <div class="ad_logo">Ad</div>
+      {{#with ad}}
+      <a href="{{url}}" class="ad_link">{{text}}</a>
+      {{/with}}
+    </div>
+    <div class="users_wrapper">Users online: <span>{{userOnline}}</span></div>
+  </div>
+  {{/with}}
+</header>
