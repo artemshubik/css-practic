@@ -1,0 +1,10 @@
+<footer class="footer_wrapper">
+  {{#with footer}}
+  <div class="footer_links">
+    {{#each pages}}
+    <a href="{{path}}" class="link_item">{{name}}</a>
+    {{/each}}
+  </div>
+  <div class="footer_copyright">{{copyright}}</div>
+  {{/with}}
+</footer>
